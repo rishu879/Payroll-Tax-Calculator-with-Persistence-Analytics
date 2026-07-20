@@ -1,0 +1,10 @@
+{
+  "name": "enterprise-os",
+  "version": "1.0.0",
+  "description": "EnterpriseOS Core Suite",
+  "main": "app.py",
+  "scripts": {
+    "build": "python build.py"
+  },
+  "dependencies": {}
+}

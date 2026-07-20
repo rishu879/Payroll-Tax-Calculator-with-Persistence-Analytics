@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Databases
+*.db
+*.sqlite3
+
+# Python bytecode/caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Netlify Build Output
+dist/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

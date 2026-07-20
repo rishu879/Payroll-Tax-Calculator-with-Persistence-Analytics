@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnterpriseOS v1.0 - Core Suite</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="dark-mode">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- MOCK OTP NOTIFICATION BANNER -->
+    <div id="otp-banner" class="otp-banner hide">
+        <div class="otp-banner-content">
+            <span class="icon-pulse">⚡</span>
+            <span><strong>Simulated SMS/Email:</strong> Your OTP code is <strong id="simulated-otp-code" class="otp-highlight">123456</strong></span>
+            <button onclick="closeOtpBanner()" class="otp-banner-close">✕</button>
+        </div>
+    </div>
+
+    <!-- ==================== LANDING PAGE ==================== -->
+    <div id="landing-container" class="landing-container">
+        <header class="landing-header glass-panel">
+            <div class="logo-area">
+                <div class="logo-icon">💼</div>
+                <div class="brand-title">EnterpriseOS</div>
+            </div>
+            <nav class="landing-nav">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="landing-auth-buttons">
+                <button class="btn btn-secondary" onclick="showAuthFromLanding('signin')">Login</button>
+                <button class="btn btn-primary" onclick="showAuthFromLanding('signup')">Register</button>
+            </div>
+        </header>
+
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge">🚀 "Recruiters, I've never seen this before."</span>
+                <h1>Enterprise Operating System (EnterpriseOS)</h1>
+                <p class="tagline">"Smart HR, Smart Payroll, Smart Finance."</p>
+                <p class="description">A virtual desktop environment running multi-window workspaces, an OS Command Console, a live Digital Twin building map, an AI Time Machine timeline, and automated progressive tax slabs.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" onclick="showAuthFromLanding('signup')">Launch System OS</button>
+                    <button class="btn btn-secondary btn-lg" onclick="scrollToSection('features')">Explore Features</button>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="illustration-box glass-panel">
+                    <div class="chart-header">
+                        <span>📊 Live Desktop Workspace</span>
+                        <span class="trend-up">Active</span>
+                    </div>
+                    <div class="bar-chart-mock">
+                        <div class="bar" style="height: 40%"></div>
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 80%"></div>
+                        <div class="bar" style="height: 70%"></div>
+                        <div class="bar" style="height: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Fully Integrated OS Applications</h2>
+            <p class="section-subtitle">Ditch standard static dashboards. Multitask with real draggable windows.</p>
+            <div class="features-grid">
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">🖥️</div>
+                    <h3>Drag-&-Drop Windows</h3>
+                    <p>Open multiple applications concurrently. Layer, drag, maximize, and minimize windows just like Windows or macOS.</p>
+                </div>
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">📟</div>
+                    <h3>OS Command Console</h3>
+                    <p>Execute shell actions like `help`, `kpis`, and `search <name>` directly inside a retro terminal interface.</p>
+                </div>
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">🗺️</div>
+                    <h3>Live Digital Twin</h3>
+                    <p>Inspect headquarters floor plans dynamically with indicators for employee departments, stocks, and server levels.</p>
+                </div>
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">🕰️</div>
+                    <h3>AI Time Machine</h3>
+                    <p>Slide a calendar timeline between 2025 and 2027 to simulate budget changes and project future payroll expenses.</p>
+                </div>
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">👥</div>
+                    <h3>KYC Employees</h3>
+                    <p>Maintain full personal records, experience fields, tax document verification codes, and bank channels.</p>
+                </div>
+                <div class="feature-card glass-panel" onclick="showAuthFromLanding('signin')">
+                    <div class="feat-icon">💸</div>
+                    <h3>TDS Payroll Slabs</h3>
+                    <p>Generate gross earnings, PF, medical policies, and progressive Section 87A rebate rules on PDF payslips.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="landing-footer-area">
+            <p>&copy; 2026 EnterpriseOS. Powered by Antigravity Design System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- ==================== LOGIN CONTAINER ==================== -->
+    <div id="login-container" class="login-container hide">
+        <button class="btn btn-secondary back-to-home" onclick="showLandingPage()">&larr; Back to Home</button>
+        <div class="login-card glass-panel">
+            <div class="login-header">
+                <div class="logo-area">
+                    <div class="logo-icon">💼</div>
+                    <h1>EnterpriseOS</h1>
+                </div>
+                <p>Virtual Desktop Workspace & Finance Suite</p>
+            </div>
+
+            <!-- Auth Tab Switcher -->
+            <div class="auth-tabs" style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; gap: 10px; flex-grow: 1;">
+                    <button class="auth-tab active" id="tab-signin" onclick="switchAuthTab('signin')" style="flex-grow: 1;">Sign In</button>
+                    <button class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')" style="flex-grow: 1;">Create Account</button>
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="showLandingPage()" style="margin-left: 10px; padding: 6px 12px; font-size: 0.75rem;">← Home</button>
+            </div>
+
+            <!-- SIGN IN FORM -->
+            <form id="login-form" class="active-form">
+                <div class="form-group">
+                    <label for="login-company">Select Workspace / Company</label>
+                    <div class="select-wrapper">
+                        <select id="login-company" required>
+                            <option value="" disabled selected>Select Company</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Demo Credentials Helper -->
+                <div id="demo-credentials-box" class="demo-credentials-box hide">
+                    <div class="demo-credentials-header">
+                        <span>🔑</span>
+                        <strong>Quick Login Credentials</strong>
+                    </div>
+                    <div id="demo-credentials-list" class="demo-credentials-list"></div>
+                    <p class="demo-hint">Click any credential to auto-fill the login form</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="name@company.com" required autocomplete="username">
+                    <small id="email-validation-hint" class="validation-hint hide">⚠️ Please enter a valid email address</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+
+                <!-- CAPTCHA Verification Section -->
+                <div class="form-group captcha-group">
+                    <label for="login-captcha">Security Verification (CAPTCHA)</label>
+                    <div class="captcha-wrapper">
+                        <div id="captcha-display" class="captcha-display">Calculating...</div>
+                        <button type="button" id="btn-refresh-captcha" class="btn-refresh-captcha" title="Refresh CAPTCHA">
+                            <i data-lucide="refresh-cw"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="login-captcha" placeholder="Enter CAPTCHA result" required autocomplete="off">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember-me" checked> Remember Me
+                    </label>
+                    <a href="#" onclick="showToast('OTP simulated notification sent!', 'info'); return false;" class="forgot-pwd-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span>Sign In to Desktop</span>
+                    <i data-lucide="shield-check"></i>
+                </button>
+
+                <div class="login-footer">
+                    <span>Don't have an account? <a href="#" onclick="switchAuthTab('signup'); return false;">Create one now</a></span>
+                    <br>
+                    <a href="#" id="btn-show-register-company">Register New Company</a>
+                </div>
+            </form>
+
+            <!-- SIGN UP FORM -->
+            <form id="signup-form" class="active-form hide">
+                <div class="form-group">
+                    <label for="signup-company">Select Company to Join</label>
+                    <div class="select-wrapper">
+                        <select id="signup-company" required>
+                            <option value="" disabled selected>Select Company</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Rishu Ranjan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="rishu@gmail.com" required autocomplete="email">
+                    <small id="signup-email-hint" class="validation-hint hide">⚠️ Please enter a valid email like name@gmail.com</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-phone">Phone Number (Optional)</label>
+                    <input type="tel" id="signup-phone" placeholder="+91 98765 43210" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Create Password (min 6 characters)</label>
+                    <input type="password" id="signup-password" placeholder="••••••••" required minlength="6" autocomplete="new-password">
+                </div>
+
+                <!-- CAPTCHA for Signup -->
+                <div class="form-group captcha-group">
+                    <label for="signup-captcha">Security Verification (CAPTCHA)</label>
+                    <div class="captcha-wrapper">
+                        <div id="signup-captcha-display" class="captcha-display">Calculating...</div>
+                        <button type="button" id="btn-refresh-signup-captcha" class="btn-refresh-captcha" title="Refresh CAPTCHA">
+                            <i data-lucide="refresh-cw"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="signup-captcha" placeholder="Enter CAPTCHA result" required autocomplete="off">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span>Create Account & Sign In</span>
+                    <i data-lucide="user-plus"></i>
+                </button>
+
+                <div class="login-footer">
+                    <span>Already have an account? <a href="#" onclick="switchAuthTab('signin'); return false;">Sign In</a></span>
+                    <br>
+                    <a href="#" id="btn-show-register-company-2" onclick="openRegisterCompanyModal(); return false;">Register New Company</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN OS DESKTOP WORKSPACE ==================== -->
+    <div id="workspace-container" class="workspace-container OS-desktop hide">
+        
+        <!-- Desktop Shortcuts Grid -->
+        <div class="desktop-shortcuts">
+            <div class="shortcut-icon" onclick="openWindow('win-employees')">
+                <div class="icon-wrap color-blue">👥</div>
+                <span>HR Roster</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-payroll')">
+                <div class="icon-wrap color-green">💰</div>
+                <span>Payroll</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-finance')">
+                <div class="icon-wrap color-purple">📊</div>
+                <span>Finance</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-inventory')">
+                <div class="icon-wrap color-orange">📦</div>
+                <span>Inventory</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-investments')">
+                <div class="icon-wrap color-teal">📈</div>
+                <span>Investments</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-taxslabs')">
+                <div class="icon-wrap color-yellow">🧮</div>
+                <span>Tax Slabs</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-reports')">
+                <div class="icon-wrap color-red">📄</div>
+                <span>Reports</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-analytics')">
+                <div class="icon-wrap color-indigo">📉</div>
+                <span>Analytics</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-terminal')">
+                <div class="icon-wrap color-terminal">📟</div>
+                <span>OS Terminal</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-digitaltwin')">
+                <div class="icon-wrap color-pink">🗺️</div>
+                <span>Digital Twin</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-timemachine')">
+                <div class="icon-wrap color-cyan">🕰️</div>
+                <span>Time Machine</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-leaves')">
+                <div class="icon-wrap color-green">📅</div>
+                <span>Leaves & Attendance</span>
+            </div>
+            <div class="shortcut-icon" onclick="openWindow('win-settings')">
+                <div class="icon-wrap color-grey">⚙️</div>
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <!-- Desktop Widgets Area -->
+        <div class="desktop-widgets">
+            <!-- Business Health Score -->
+            <div class="desktop-widget glass-panel">
+                <div class="widget-header">
+                    <h4>Business Health Score</h4>
+                    <span class="widget-badge score-high">92/100</span>
+                </div>
+                <div class="health-indicators mt-2">
+                    <div class="indicator-bar">
+                        <span>HR (Headcount)</span>
+                        <div class="progress"><div class="fill" style="width: 97%;"></div></div>
+                    </div>
+                    <div class="indicator-bar">
+                        <span>Finance (Profitability)</span>
+                        <div class="progress"><div class="fill" style="width: 89%;"></div></div>
+                    </div>
+                    <div class="indicator-bar">
+                        <span>Security & Logins</span>
+                        <div class="progress"><div class="fill" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company DNA -->
+            <div class="desktop-widget glass-panel mt-4">
+                <div class="widget-header">
+                    <h4>Company DNA Profile</h4>
+                </div>
+                <div class="dna-indicators mt-2">
+                    <div class="dna-bar">
+                        <span>Innovation Index</span>
+                        <div class="bar-fill" style="width: 85%;"></div>
+                    </div>
+                    <div class="dna-bar">
+                        <span>Operational Efficiency</span>
+                        <div class="bar-fill" style="width: 72%;"></div>
+                    </div>
+                    <div class="dna-bar">
+                        <span>Employee Happiness</span>
+                        <div class="bar-fill" style="width: 91%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== DRAGGABLE WINDOWS ==================== -->
+
+        <!-- 1. Employee Management Window -->
+        <div class="window glass-panel hide" id="win-employees">
+            <header class="window-header">
+                <div class="title-wrap">👥 Employee Directory</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-employees')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-employees')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-employees')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="action-bar">
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="employee-search" placeholder="Search employees by name, code, dept...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="employee-filter-dept">
+                            <option value="">All Departments</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="btn-add-employee">
+                        <i data-lucide="user-plus"></i> Add Employee
+                    </button>
+                </div>
+                <div class="table-container mt-2">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Emp Code</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Designation</th>
+                                <th>Basic Salary</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employees-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. HR Management Window -->
+        <div class="window glass-panel hide" id="win-hr-recruitment">
+            <header class="window-header">
+                <div class="title-wrap">💼 HR Recruitment Module</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-hr-recruitment')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-hr-recruitment')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-hr-recruitment')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="action-bar">
+                    <h2>Recruitment Pipeline & Status</h2>
+                    <button class="btn btn-primary" onclick="openAddCandidateModal()">
+                        <i data-lucide="plus"></i> Add Candidate
+                    </button>
+                </div>
+                <div class="table-container mt-2">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Candidate</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Designation</th>
+                                <th>Interview Date</th>
+                                <th>Status</th>
+                                <th>Offer Letter</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recruitment-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Payroll Window -->
+        <div class="window glass-panel hide" id="win-payroll">
+            <header class="window-header">
+                <div class="title-wrap">💰 Payroll Processor</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-payroll')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-payroll')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-payroll')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="action-bar flex-wrap">
+                    <div class="payroll-selectors">
+                        <div class="form-group-inline">
+                            <label for="payroll-month">Month</label>
+                            <select id="payroll-month">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="payroll-year">Year</label>
+                            <select id="payroll-year">
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="payroll-working-days">Working Days</label>
+                            <input type="number" id="payroll-working-days" value="26" min="1" max="31">
+                        </div>
+                    </div>
+                    <div class="payroll-buttons">
+                        <button class="btn btn-primary" id="btn-generate-bulk-payroll">
+                            <i data-lucide="cpu"></i> Run Bulk Payroll
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container mt-2">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Emp Code</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Basic Salary</th>
+                                <th>Leaves (Unpaid)</th>
+                                <th>Gross Salary</th>
+                                <th>PF</th>
+                                <th>Tax</th>
+                                <th>Net Salary</th>
+                                <th>Status</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payroll-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Finance Window -->
+        <div class="window glass-panel hide" id="win-finance">
+            <header class="window-header">
+                <div class="title-wrap">📊 Finance Journals</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-finance')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-finance')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-finance')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="finance-grid">
+                    <div class="form-card">
+                        <h2>Record Ledger Transaction</h2>
+                        <form id="finance-record-form" class="mt-4">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fin-type">Type</label>
+                                    <select id="fin-type" required>
+                                        <option value="Income">Income (Revenue / Funding)</option>
+                                        <option value="Expense">Expense (Payrolls / Ops / Taxes)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fin-category">Category</label>
+                                    <input type="text" id="fin-category" placeholder="e.g. Revenue, Payroll" required>
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fin-amount">Amount (₹)</label>
+                                    <input type="number" id="fin-amount" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fin-date">Date</label>
+                                    <input type="date" id="fin-date" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fin-desc">Description</label>
+                                <textarea id="fin-desc" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Record Transaction</button>
+                        </form>
+                    </div>
+                    <div class="table-card flex-grow">
+                        <h2>Income & Expense Journals</h2>
+                        <div class="table-container max-height-300">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Category</th>
+                                        <th>Amount</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="finance-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Inventory Window -->
+        <div class="window glass-panel hide" id="win-inventory">
+            <header class="window-header">
+                <div class="title-wrap">📦 Company Inventory Stock</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-inventory')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-inventory')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-inventory')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>Total Assets</h3>
+                        <p id="kpi-inventory-count">0</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Inventory Value</h3>
+                        <p id="kpi-inventory-value">₹0</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Assigned Items</h3>
+                        <p id="kpi-inventory-assigned">0</p>
+                    </div>
+                </div>
+                <div class="finance-grid mt-4">
+                    <div class="form-card">
+                        <h2>Procure Asset</h2>
+                        <form id="inventory-asset-form" class="mt-4">
+                            <div class="form-group">
+                                <label for="inv-name">Product Name</label>
+                                <input type="text" id="inv-name" required>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="inv-category">Category</label>
+                                    <select id="inv-category" required>
+                                        <option value="Laptops">Laptops</option>
+                                        <option value="Desktops">Desktops</option>
+                                        <option value="Furniture">Furniture</option>
+                                        <option value="Networking">Networking</option>
+                                        <option value="Accessories">Accessories</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inv-sku">SKU Code</label>
+                                    <input type="text" id="inv-sku" required>
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="inv-price">Purchase Cost (₹)</label>
+                                    <input type="number" id="inv-price" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inv-warehouse">Warehouse</label>
+                                    <select id="inv-warehouse">
+                                        <option value="Warehouse A">Warehouse A</option>
+                                        <option value="Warehouse B">Warehouse B</option>
+                                        <option value="Branch Office">Branch Office</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Add Asset</button>
+                        </form>
+                    </div>
+                    <div class="table-card flex-grow">
+                        <h2>Asset Stock Registry</h2>
+                        <div class="table-container max-height-300">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>SKU</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Warehouse</th>
+                                        <th>Assignee</th>
+                                        <th>Status</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inventory-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Market Investments Window -->
+        <div class="window glass-panel hide" id="win-investments">
+            <header class="window-header">
+                <div class="title-wrap">📈 Live Watchlist & Portfolio</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-investments')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-investments')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-investments')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="finance-grid">
+                    <div class="table-card">
+                        <h2>Live Tickers Watchlist</h2>
+                        <div class="table-container max-height-300">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Name</th>
+                                        <th>Live Price</th>
+                                        <th>Change %</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="investments-watchlist-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="table-card flex-grow">
+                        <h2>Investments Portfolio</h2>
+                        <div class="table-container max-height-300">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Type</th>
+                                        <th>Purchase Price</th>
+                                        <th>Qty</th>
+                                        <th>Current Price</th>
+                                        <th>Total Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="investments-portfolio-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Tax Slabs Window -->
+        <div class="window glass-panel hide" id="win-taxslabs">
+            <header class="window-header">
+                <div class="title-wrap">🧮 Progressive Tax Configuration</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-taxslabs')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-taxslabs')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-taxslabs')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="alert-info glass-panel">
+                    <div>
+                        <strong>Progressive Tax Slabs:</strong> Annual gross salary minus standard deduction (₹75,000) is subjected to these progressive slabs. If net taxable income is ≤ ₹7,00,000, 100% tax rebate is applied under Section 87A.
+                    </div>
+                </div>
+                <div class="slabs-list-panel mt-4">
+                    <div class="slabs-list-container" id="tax-slabs-container"></div>
+                    <div class="slabs-actions-footer mt-4">
+                        <button class="btn btn-secondary btn-sm" id="btn-add-slab-row"><i data-lucide="plus"></i> Add Slab Range</button>
+                        <button class="btn btn-success" id="btn-save-slabs"><i data-lucide="save"></i> Save Tax Rules</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Reports Window -->
+        <div class="window glass-panel hide" id="win-reports" style="width: 1000px; height: 650px;">
+            <header class="window-header">
+                <div class="title-wrap">📄 Enterprise Report Center</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-reports')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-reports')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-reports')">✕</button>
+                </div>
+            </header>
+            <div class="window-body" style="display: flex; gap: 20px; padding: 0; overflow: hidden; height: 100%;">
+                
+                <!-- Left Pane: Report Domain Categories -->
+                <div class="twin-details-sidebar" style="width: 240px; border-right: 1px solid var(--border-color); padding: 20px; overflow-y: auto; flex-shrink: 0; background: rgba(0, 0, 0, 0.05);">
+                    <h3 style="font-size: 0.95rem; text-transform: uppercase; color: var(--color-primary); letter-spacing: 0.5px; margin-bottom: 15px;">Report Domains</h3>
+                    <ul class="start-body" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;" id="report-domain-list">
+                        <li class="active-tab" onclick="switchReportDomain('employees', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">👥 Employee Reports</li>
+                        <li onclick="switchReportDomain('payroll', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">💰 Payroll Reports</li>
+                        <li onclick="switchReportDomain('finance', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">📊 Finance Reports</li>
+                        <li onclick="switchReportDomain('attendance', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">📅 Attendance Reports</li>
+                        <li onclick="switchReportDomain('leaves', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🌴 Leave Reports</li>
+                        <li onclick="switchReportDomain('recruitment', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">💼 Recruitment Reports</li>
+                        <li onclick="switchReportDomain('inventory', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">📦 Inventory Reports</li>
+                        <li onclick="switchReportDomain('vendor', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🤝 Vendor Reports</li>
+                        <li onclick="switchReportDomain('tax', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🧮 Tax Reports</li>
+                        <li onclick="switchReportDomain('audit', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🛡️ Audit Reports</li>
+                        <li onclick="switchReportDomain('ai', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🤖 AI Reports</li>
+                        <li onclick="switchReportDomain('custom', this)" style="padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s;">🛠️ Custom Reports</li>
+                    </ul>
+                </div>
+
+                <!-- Right Pane: Filters, Actions & Preview -->
+                <div style="flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px; height: 100%;">
+                    
+                    <!-- Header Info -->
+                    <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        <h2 id="report-title-label" style="font-size: 1.3rem; margin: 0; color: var(--text-primary);">Employee Reports Registry</h2>
+                        <p class="desc" style="margin-top: 4px; font-size: 0.8rem; color: var(--text-secondary);">Query, filter, preview, email, backup, and schedule system reports.</p>
+                    </div>
+
+                    <!-- Dynamic Filter Controls -->
+                    <div class="form-card" style="padding: 15px;">
+                        <h3 style="font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">⚙️ Dashboard Report Filters</h3>
+                        <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+                            <div class="form-group" style="margin: 0;">
+                                <label for="filter-report-dept" style="font-size: 0.75rem;">Department</label>
+                                <select id="filter-report-dept">
+                                    <option value="">All Departments</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin: 0;">
+                                <label for="filter-report-emp" style="font-size: 0.75rem;">Employee</label>
+                                <select id="filter-report-emp">
+                                    <option value="">All Employees</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin: 0;">
+                                <label for="filter-report-status" style="font-size: 0.75rem;">Status / Type</label>
+                                <select id="filter-report-status">
+                                    <option value="">All Statuses</option>
+                                    <option value="Active">Active / Income</option>
+                                    <option value="Inactive">Inactive / Expense</option>
+                                    <option value="Pending">Pending / Applied</option>
+                                    <option value="Approved">Approved</option>
+                                    <option value="Rejected">Rejected</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin: 0;">
+                                <label for="filter-report-start" style="font-size: 0.75rem;">Start Date</label>
+                                <input type="date" id="filter-report-start">
+                            </div>
+                            <div class="form-group" style="margin: 0;">
+                                <label for="filter-report-end" style="font-size: 0.75rem;">End Date</label>
+                                <input type="date" id="filter-report-end">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions Bar (Generate, Preview, Export, Email, Backup) -->
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                        <button class="btn btn-primary" onclick="runReportPreview()"><i data-lucide="play"></i> Run & Preview</button>
+                        
+                        <div class="taskbar-divider" style="height: 24px; margin: 0 5px;"></div>
+                        
+                        <button class="btn btn-secondary btn-sm" onclick="exportReportFile('pdf')"><i data-lucide="file-text" class="color-red"></i> PDF</button>
+                        <button class="btn btn-secondary btn-sm" onclick="exportReportFile('excel')"><i data-lucide="file-spreadsheet" class="color-green"></i> Excel</button>
+                        <button class="btn btn-secondary btn-sm" onclick="exportReportFile('csv')"><i data-lucide="file-code" class="color-blue"></i> CSV</button>
+                        <button class="btn btn-secondary btn-sm" onclick="printReportPreview()"><i data-lucide="print" class="color-purple"></i> Print</button>
+                        <button class="btn btn-secondary btn-sm" onclick="openReportEmailModal()"><i data-lucide="mail" class="color-orange"></i> Email</button>
+                        <button class="btn btn-secondary btn-sm" onclick="backupReportToCloud()"><i data-lucide="cloud-lightning" class="color-teal"></i> Backup</button>
+                    </div>
+
+                    <!-- Report Table Preview Area -->
+                    <div class="table-card flex-grow" style="display: flex; flex-direction: column;">
+                        <h3 style="font-size: 0.9rem; margin-bottom: 8px;">📊 Live Report Transcript Preview</h3>
+                        <div class="table-container flex-grow" style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px;">
+                            <table class="data-table">
+                                <thead id="report-preview-head">
+                                    <tr>
+                                        <th>Run a report query to render dynamic workspace data transcript.</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="report-preview-body">
+                                    <tr>
+                                        <td class="text-muted" style="text-align: center; padding: 30px;">Select filters and click "Run & Preview" to load report rows...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Scheduled Reports Section -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                        
+                        <!-- Create Schedule -->
+                        <div class="form-card" style="padding: 15px;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">⏰ Schedule Automated Report</h3>
+                            <form id="report-schedule-form" onsubmit="scheduleReportSubmit(event)">
+                                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div class="form-group">
+                                        <label for="schedule-frequency">Frequency</label>
+                                        <select id="schedule-frequency" required>
+                                            <option value="Daily">Daily Summary</option>
+                                            <option value="Weekly">Weekly Digest</option>
+                                            <option value="Monthly">Monthly Report</option>
+                                            <option value="Quarterly">Quarterly Audits</option>
+                                            <option value="Annual">Annual Review</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="schedule-format">Format</label>
+                                        <select id="schedule-format" required>
+                                            <option value="pdf">PDF Document</option>
+                                            <option value="excel">Excel Workbook</option>
+                                            <option value="csv">CSV Spreadsheets</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="schedule-email">Recipient Email</label>
+                                    <input type="email" id="schedule-email" placeholder="finance-manager@company.com" required>
+                                </div>
+                                <button type="submit" class="btn btn-secondary btn-sm btn-block"><i data-lucide="clock"></i> Activate Schedule</button>
+                            </form>
+                        </div>
+
+                        <!-- Active Schedules list -->
+                        <div class="table-card" style="padding: 15px; border: 1px solid var(--border-color); border-radius: 8px;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 12px;">🗓️ Active Automated Schedules</h3>
+                            <div class="table-container" style="max-height: 140px; overflow-y: auto;">
+                                <table class="data-table" style="font-size: 0.75rem;">
+                                    <thead>
+                                        <tr>
+                                            <th>Report</th>
+                                            <th>Freq</th>
+                                            <th>Format</th>
+                                            <th>Recipient</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="report-schedules-list-body">
+                                        <tr>
+                                            <td colspan="4" class="text-muted" style="text-align: center; padding: 10px;">No automated summaries scheduled.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 9. Analytics Window -->
+        <div class="window glass-panel hide" id="win-analytics">
+            <header class="window-header">
+                <div class="title-wrap">📉 Analytical Charts</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-analytics')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-analytics')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-analytics')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h2>Monthly Payroll Expense Trend</h2>
+                        <div class="chart-container"><canvas id="chart-payroll-trend"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Department Wise Headcount</h2>
+                        <div class="chart-container"><canvas id="chart-dept-distribution"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Employee Salary Distribution</h2>
+                        <div class="chart-container"><canvas id="chart-salary-histogram"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Department Salary Comparison</h2>
+                        <div class="chart-container"><canvas id="chart-dept-salary"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. OS Terminal Window -->
+        <div class="window glass-panel hide" id="win-terminal">
+            <header class="window-header">
+                <div class="title-wrap">📟 OS Command Console</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-terminal')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-terminal')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-terminal')">✕</button>
+                </div>
+            </header>
+            <div class="window-body terminal-body">
+                <div class="terminal-output" id="terminal-output">
+                    <div>EnterpriseOS Terminal [Version 1.0.0]</div>
+                    <div>(c) 2026 EnterpriseOS. All rights reserved.</div>
+                    <div>Type <strong class="color-green">help</strong> for a list of command guidelines.</div>
+                    <br>
+                </div>
+                <form id="terminal-input-form" class="terminal-prompt-line">
+                    <span class="prompt-symbol">admin@enterprise-os:~$</span>
+                    <input type="text" id="terminal-input-field" autofocus autocomplete="off" required>
+                </form>
+            </div>
+        </div>
+
+        <!-- 11. Company Digital Twin Window -->
+        <div class="window glass-panel hide" id="win-digitaltwin">
+            <header class="window-header">
+                <div class="title-wrap">🗺️ Company Headquarters Digital Twin</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-digitaltwin')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-digitaltwin')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-digitaltwin')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="digital-twin-grid">
+                    <div class="building-map-panel">
+                        <h2>Building Floor Plan Blueprint</h2>
+                        <!-- Interactive Blueprint Grid -->
+                        <div class="office-map-container mt-4">
+                            <div class="map-zone zone-it" onclick="showZoneDetails('IT')">
+                                <div class="zone-label">👨‍💻 Floor 2: IT Department</div>
+                                <div class="zone-stats" id="twin-stats-it">43 Online</div>
+                            </div>
+                            <div class="map-zone zone-hr" onclick="showZoneDetails('HR')">
+                                <div class="zone-label">🙋‍♀️ Floor 1: HR & Recruitment</div>
+                                <div class="zone-stats" id="twin-stats-hr">2 Recruiting</div>
+                            </div>
+                            <div class="map-zone zone-finance" onclick="showZoneDetails('Finance')">
+                                <div class="zone-label">💰 Floor 1: Finance Suite</div>
+                                <div class="zone-stats" id="twin-stats-finance">Ledgers Healthy</div>
+                            </div>
+                            <div class="map-zone zone-warehouse" onclick="showZoneDetails('Warehouse')">
+                                <div class="zone-label">📦 Warehouse Logistics</div>
+                                <div class="zone-stats" id="twin-stats-warehouse">Low Stock Alert</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="twin-details-sidebar glass-panel">
+                        <h3>Zone Diagnostics</h3>
+                        <div id="twin-diag-output" class="diag-output mt-4">
+                            Click any zone on the office blueprint to extract real-time sensor metrics and headcount rosters.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. AI Time Machine Window -->
+        <div class="window glass-panel hide" id="win-timemachine">
+            <header class="window-header">
+                <div class="title-wrap">🕰️ AI Time Machine & Cost Forecast</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-timemachine')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-timemachine')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-timemachine')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="time-machine-container">
+                    <h2>Virtual Company Timeline Slider</h2>
+                    <div class="timeline-slider-wrap mt-4">
+                        <input type="range" id="timemachine-slider" min="2025" max="2027" value="2026" class="timemachine-slider">
+                        <div class="timeline-ticks">
+                            <span>Jan 2025</span>
+                            <span class="active">Jul 2026 (Present)</span>
+                            <span>Oct 2027</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-grid mt-4">
+                        <div class="kpi-card">
+                            <h3>Simulated Headcount</h3>
+                            <p id="sim-headcount">6 Employees</p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3>Simulated Monthly Outlay</h3>
+                            <p id="sim-outlay">₹583,000</p>
+                        </div>
+                        <div class="kpi-card">
+                            <h3>Projected Annual Tax</h3>
+                            <p id="sim-annual-tax">₹1,049,400</p>
+                        </div>
+                    </div>
+
+                    <div class="forecast-simulation-card glass-panel mt-4">
+                        <h3>Future Headcount Cost Predictor</h3>
+                        <div class="form-grid mt-2">
+                            <div class="form-group">
+                                <label for="sim-new-hires">Add Future Engineering Hires</label>
+                                <input type="number" id="sim-new-hires" value="5" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="sim-avg-salary">Avg Target Salary (₹/month)</label>
+                                <input type="number" id="sim-avg-salary" value="80000">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-2" onclick="simulateHiringCost()">Calculate AI Space & Budget Forecast</button>
+                        
+                        <div id="sim-forecast-output" class="alert-info hide" style="margin-top: 15px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. Leaves & Attendance Window -->
+        <div class="window glass-panel hide" id="win-leaves" style="width: 900px; height: 600px;">
+            <header class="window-header">
+                <div class="title-wrap">📅 Leaves & Attendance Manager</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-leaves')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-leaves')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-leaves')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                    <button class="btn btn-primary" onclick="simulateClockIn()"><i data-lucide="play"></i> Clock In (Swipe)</button>
+                    <button class="btn btn-danger" onclick="simulateClockOut()"><i data-lucide="square"></i> Clock Out (Swipe)</button>
+                </div>
+
+                <div class="finance-grid">
+                    <div class="form-card" style="width: 320px; flex-shrink: 0;">
+                        <h2>Apply for Leave</h2>
+                        <form id="leave-request-form" class="mt-4">
+                            <div class="form-group">
+                                <label for="leave-type">Leave Type</label>
+                                <select id="leave-type" required>
+                                    <option value="Paid Leave (PL)">Paid Leave (PL)</option>
+                                    <option value="Casual Leave (CL)">Casual Leave (CL)</option>
+                                    <option value="Sick Leave (SL)">Sick Leave (SL)</option>
+                                    <option value="Maternity Leave (ML)">Maternity Leave (ML)</option>
+                                    <option value="Paternity Leave (PL)">Paternity Leave (PL)</option>
+                                    <option value="LOP / Unpaid Leave">LOP / Unpaid Leave</option>
+                                </select>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="leave-start-date">Start Date</label>
+                                    <input type="date" id="leave-start-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="leave-end-date">End Date</label>
+                                    <input type="date" id="leave-end-date" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="leave-approver-select">Select Approving Manager</label>
+                                <select id="leave-approver-select" required>
+                                    <option value="" disabled selected>Select Approver</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="leave-reason">Reason</label>
+                                <textarea id="leave-reason" rows="2" placeholder="Reason details..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <div class="table-card flex-grow">
+                        <h2>Leave Registry & Approvals</h2>
+                        <div class="table-container max-height-300">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Dates</th>
+                                        <th>Type</th>
+                                        <th>Reason</th>
+                                        <th>Approver</th>
+                                        <th>Status</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaves-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-card mt-4">
+                    <h2>Daily Attendance Swipe Logs</h2>
+                    <div class="table-container max-height-250">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Date</th>
+                                    <th>Clock In</th>
+                                    <th>Clock Out</th>
+                                    <th>Late (min)</th>
+                                    <th>Overtime (hrs)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendance-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. Settings Window -->
+        <div class="window glass-panel hide" id="win-settings">
+            <header class="window-header">
+                <div class="title-wrap">⚙️ Settings & Configuration</div>
+                <div class="window-controls">
+                    <button class="win-btn btn-min" onclick="minimizeWindow('win-settings')">─</button>
+                    <button class="win-btn btn-max" onclick="toggleMaximizeWindow('win-settings')">🗖</button>
+                    <button class="win-btn btn-close" onclick="closeWindow('win-settings')">✕</button>
+                </div>
+            </header>
+            <div class="window-body">
+                <div class="settings-grid">
+                    <div class="form-card">
+                        <h2>Corporate Profile Details</h2>
+                        <form id="settings-profile-form" class="mt-4">
+                            <div class="form-group">
+                                <label for="set-company-name">Company Legal Name</label>
+                                <input type="text" id="set-company-name" required>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="set-currency">Default Currency</label>
+                                    <select id="set-currency">
+                                        <option value="INR">INR (₹) - Indian Rupee</option>
+                                        <option value="USD">USD ($) - US Dollar</option>
+                                        <option value="EUR">EUR (€) - Euro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="set-regime">Default Tax Regime</label>
+                                    <select id="set-regime">
+                                        <option value="New Regime">New Progressive Regime</option>
+                                        <option value="Old Regime">Old Progressive Regime</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Company Configuration</button>
+                        </form>
+                    </div>
+
+                    <div class="form-card admin-only">
+                        <h2>System Backups & Database Restoration</h2>
+                        <p class="desc">Save SQLite database snapshots to your local drive or perform restorations.</p>
+                        <div class="settings-backup-actions mt-4" style="display: flex; gap: 12px;">
+                            <button class="btn btn-secondary" onclick="triggerDbBackup()">
+                                <i data-lucide="download"></i> Backup Database
+                            </button>
+                            <button class="btn btn-danger" onclick="triggerDbRestore()">
+                                <i data-lucide="upload"></i> Restore Database
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== SYSTEM TASKBAR ==================== -->
+    <div id="os-taskbar" class="os-taskbar hide">
+        <button class="btn-start" onclick="toggleStartMenu()">
+            <span>💻 Start</span>
+        </button>
+
+        <div class="taskbar-divider"></div>
+
+        <!-- Dynamic Running Windows icons list -->
+        <div class="taskbar-windows" id="taskbar-windows-list"></div>
+
+        <div class="taskbar-divider"></div>
+
+        <div class="taskbar-system-tray">
+            <div class="role-simulator-badge admin-only">
+                <span>Role:</span>
+                <select id="role-selector-sim" class="role-sim-select">
+                    <option value="Admin">Super Admin</option>
+                    <option value="HR Manager">HR Manager</option>
+                    <option value="Finance Manager">Finance Manager</option>
+                    <option value="Payroll Manager">Payroll Manager</option>
+                    <option value="Employee">Employee</option>
+                </select>
+            </div>
+            <button id="btn-theme-toggle" class="btn-icon" title="Toggle Theme">
+                <i data-lucide="sun" id="theme-icon"></i>
+            </button>
+            <div class="taskbar-clock" id="taskbar-clock">12:00 PM</div>
+        </div>
+    </div>
+
+    <!-- START MENU -->
+    <div id="start-menu" class="start-menu glass-panel hide">
+        <div class="start-header">
+            <div class="profile-avatar-wrapper">
+                <div class="profile-avatar" id="user-avatar-char">A</div>
+                <span id="user-phone-status-badge" class="phone-status-badge unverified" title="Phone Unverified">⚠️</span>
+            </div>
+            <div class="profile-info">
+                <strong id="user-display-name" style="display:block; color:white;">Admin User</strong>
+                <small id="user-display-role" class="text-muted">Administrator</small>
+                <button id="btn-trigger-phone-verify" class="btn-verify-link">Verify Phone</button>
+            </div>
+        </div>
+        <div class="start-body">
+            <ul>
+                <li onclick="openWindow('win-employees')">👥 HR Directory</li>
+                <li onclick="openWindow('win-hr-recruitment')">💼 Recruitment Pipeline</li>
+                <li onclick="openWindow('win-payroll')">💰 Payroll Processor</li>
+                <li onclick="openWindow('win-finance')">📊 Finance journals</li>
+                <li onclick="openWindow('win-inventory')">📦 Inventory Stock</li>
+                <li onclick="openWindow('win-investments')">📈 Watchlist Tickers</li>
+                <li onclick="openWindow('win-taxslabs')">🧮 Tax Slab settings</li>
+                <li onclick="openWindow('win-reports')">📄 Export Center</li>
+                <li onclick="openWindow('win-analytics')">📉 Analytics Charts</li>
+                <li onclick="openWindow('win-terminal')">📟 Command Console</li>
+                <li onclick="openWindow('win-digitaltwin')">🗺️ Digital Twin Map</li>
+                <li onclick="openWindow('win-timemachine')">🕰️ Time Machine</li>
+                <li onclick="openWindow('win-leaves')">📅 Leaves & Attendance</li>
+                <li onclick="openWindow('win-settings')">⚙️ Settings</li>
+            </ul>
+        </div>
+        <div class="start-footer">
+            <button id="btn-logout" class="btn-logout">
+                <i data-lucide="log-out"></i> Sign Out
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ==================== FLOATING AI CHAT ASSISTANT ==================== -->
+    <div id="ai-assistant-widget" class="ai-widget-container">
+        <!-- Floating chat trigger button -->
+        <button class="ai-chat-btn" onclick="toggleAiChatWindow()">
+            <span>💬 AI Assistant</span>
+        </button>
+
+        <!-- Expanded Chat Box panel -->
+        <div class="ai-chat-window glass-panel hide" id="ai-chat-window">
+            <header class="ai-chat-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>🤖</span>
+                    <div>
+                        <strong>WorkMate AI</strong>
+                        <small style="display:block; font-size: 0.65rem; color: var(--color-success);">Online & Active</small>
+                    </div>
+                </div>
+                <button class="btn-close" onclick="toggleAiChatWindow()" style="background:transparent; border:none; color:white; cursor:pointer;">✕</button>
+            </header>
+            
+            <div class="ai-chat-body" id="ai-chat-messages">
+                <div class="ai-msg ai-received">
+                    👋 Welcome! I'm your EnterpriseOS AI Assistant. Try asking:
+                    <ul style="margin-left: 15px; margin-top: 5px; font-size: 0.8rem;">
+                        <li>"take me to settings"</li>
+                        <li>"open terminal"</li>
+                        <li>"explain gross salary"</li>
+                        <li>"show IT department"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Suggested Quick Actions list -->
+            <div class="ai-quick-actions" id="ai-quick-actions">
+                <button class="quick-pill" onclick="sendAiQuickMessage('➕ Add Employee')">➕ Add Employee</button>
+                <button class="quick-pill" onclick="sendAiQuickMessage('💰 Generate Payroll')">💰 Generate Payroll</button>
+                <button class="quick-pill" onclick="sendAiQuickMessage('📊 Open Dashboard')">📊 Open Dashboard</button>
+                <button class="quick-pill" onclick="sendAiQuickMessage('📈 Analytics')">📈 Analytics</button>
+                <button class="quick-pill" onclick="sendAiQuickMessage('⚙ Settings')">⚙ Settings</button>
+            </div>
+
+            <form id="ai-chat-input-form" class="ai-chat-footer">
+                <input type="text" id="ai-chat-input-text" placeholder="Type a message..." required autocomplete="off">
+                <button type="submit" class="btn btn-primary" style="padding: 10px 14px;"><i data-lucide="send"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ==================== SYSTEM MODALS ==================== -->
+
+    <!-- 1. Employee Detail Modal (Add/Edit) -->
+    <div id="modal-employee" class="modal-overlay hide">
+        <div class="modal-card glass-panel" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
+            <header class="modal-header">
+                <h2 id="employee-modal-title">Add Employee Record</h2>
+                <button class="btn-close" onclick="closeEmployeeModal()">✕</button>
+            </header>
+            <form id="employee-form">
+                <input type="hidden" id="emp-edit-id">
+                
+                <h3>Personal Credentials</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-code">Employee ID Code</label>
+                        <input type="text" id="emp-code" placeholder="EMP101" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-name">Full Name</label>
+                        <input type="text" id="emp-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-email">Corporate Email</label>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="email" id="emp-email" placeholder="john.doe@company.com" required style="flex-grow: 1;">
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="suggestEmail()" style="white-space: nowrap;">Auto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-gender">Gender</label>
+                        <select id="emp-gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-father">Father's Name</label>
+                        <input type="text" id="emp-father">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-mother">Mother's Name</label>
+                        <input type="text" id="emp-mother">
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-dob">Date of Birth</label>
+                        <input type="date" id="emp-dob">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-age">Age</label>
+                        <input type="number" id="emp-age" value="25" min="18">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-blood">Blood Group</label>
+                        <input type="text" id="emp-blood" placeholder="O+">
+                    </div>
+                </div>
+
+                <h3>Contact & Location Info</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-phone">Phone Number</label>
+                        <input type="text" id="emp-phone" placeholder="9876543210">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-emergency">Emergency Contact</label>
+                        <input type="text" id="emp-emergency">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-address">Address</label>
+                        <input type="text" id="emp-address">
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-city">City</label>
+                        <input type="text" id="emp-city" placeholder="Mumbai">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-state">State</label>
+                        <input type="text" id="emp-state" placeholder="Maharashtra">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-pincode">Pin Code</label>
+                        <input type="text" id="emp-pincode" placeholder="400001">
+                    </div>
+                </div>
+
+                <h3>Professional & KYC Details</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-dept">Department</label>
+                        <input type="text" id="emp-dept" placeholder="IT" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-designation">Designation</label>
+                        <input type="text" id="emp-designation" placeholder="Software Engineer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-joining">Joining Date</label>
+                        <input type="date" id="emp-joining" required>
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-pan">PAN Card Number</label>
+                        <input type="text" id="emp-pan" placeholder="ABCDE1234F">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-aadhaar">Aadhaar Card Number</label>
+                        <input type="text" id="emp-aadhaar" placeholder="1234 5678 9012">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-exp">Experience (Years)</label>
+                        <input type="number" id="emp-exp" value="1.0" min="0" step="0.5">
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-education">Highest Education</label>
+                        <input type="text" id="emp-education" placeholder="B.Tech Computer Science">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-photo">Photo URL (Avatar)</label>
+                        <input type="text" id="emp-photo" placeholder="https://image-link.com/avatar.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-basic">Basic Salary (₹)</label>
+                        <input type="number" id="emp-basic" placeholder="60000" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="emp-bank">Bank Account No</label>
+                        <input type="text" id="emp-bank" placeholder="998877665544">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-ifsc">IFSC Code</label>
+                        <input type="text" id="emp-ifsc" placeholder="HDFC0000001">
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-role">Access Role</label>
+                        <select id="emp-role">
+                            <option value="Employee">Employee (Pay Slips only)</option>
+                            <option value="Admin">Admin (Full Control)</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="Finance Manager">Finance Manager</option>
+                            <option value="Payroll Manager">Payroll Manager</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="emp-password">Login Password</label>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="password" id="emp-password" placeholder="employee123" style="flex-grow: 1;">
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="suggestPassword()" style="white-space: nowrap;">Gen</button>
+                        </div>
+                        <small class="form-tip">Leave blank for edit to keep unchanged. Defaults to "employee123" for new.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-status">Active Status</label>
+                        <select id="emp-status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeEmployeeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Employee</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Single Employee Payroll Calculation Modal -->
+    <div id="modal-process-payroll" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-500">
+            <header class="modal-header">
+                <h2>Process Employee Payroll</h2>
+                <button class="btn-close" onclick="closeProcessPayrollModal()">✕</button>
+            </header>
+            <form id="payroll-calculation-form">
+                <input type="hidden" id="payroll-calc-emp-id">
+                <div class="form-group">
+                    <label>Employee Name</label>
+                    <input type="text" id="payroll-calc-emp-name" readonly class="readonly-input">
+                </div>
+                <div class="form-group">
+                    <label>Monthly Basic Salary</label>
+                    <input type="text" id="payroll-calc-basic" readonly class="readonly-input">
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="payroll-calc-bonus">Bonus (₹)</label>
+                        <input type="number" id="payroll-calc-bonus" value="0" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="payroll-calc-unpaid-leaves">Unpaid Leaves Override</label>
+                        <input type="number" id="payroll-calc-unpaid-leaves" value="0" min="0">
+                        <small id="unpaid-leaves-auto-text" class="form-tip color-blue">Auto: 0 leaves detected</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeProcessPayrollModal()">Cancel</button>
+                    <button type="submit" class="btn btn-success">Calculate & Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Company Registration Modal -->
+    <div id="modal-register-company" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-450">
+            <header class="modal-header">
+                <h2>Register Corporate Workspace</h2>
+                <button class="btn-close" onclick="closeRegisterCompanyModal()">✕</button>
+            </header>
+            <form id="register-company-form">
+                <div class="form-group">
+                    <label for="reg-company-name">Company Legal Name</label>
+                    <input type="text" id="reg-company-name" placeholder="e.g. TCS, Infosys..." required>
+                </div>
+                <div class="form-group">
+                    <label>Enterprise Templates (Seeded with full charts & rosters)</label>
+                    <div class="company-templates-grid">
+                        <button type="button" class="btn-template-select" data-template="Infosys">
+                            <span class="template-logo">🏢</span> Infosys
+                        </button>
+                        <button type="button" class="btn-template-select" data-template="Cognizant">
+                            <span class="template-logo">💻</span> Cognizant
+                        </button>
+                        <button type="button" class="btn-template-select" data-template="Wipro">
+                            <span class="template-logo">🌐</span> Wipro
+                        </button>
+                        <button type="button" class="btn-template-select" data-template="TCS">
+                            <span class="template-logo">📈</span> TCS
+                        </button>
+                    </div>
+                </div>
+                <div class="alert-info mt-2">
+                    <i data-lucide="info"></i>
+                    <span>Registering initializes an independent workspace populated with active tax slabs, employee roster, and historical payroll.</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeRegisterCompanyModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Workspace</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. Pay Slip Detail Modal -->
+    <div id="modal-payslip" class="modal-overlay hide">
+        <div class="modal-card glass-panel payslip-modal-card">
+            <header class="modal-header hide-print">
+                <h2>Generated Salary Pay Slip</h2>
+                <div class="modal-header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="sendSimulatedEmailSlip()">
+                        <i data-lucide="mail"></i> Email Slip
+                    </button>
+                    <button class="btn btn-secondary btn-sm" onclick="printPaySlip()">
+                        <i data-lucide="print"></i> Print
+                    </button>
+                    <button class="btn-close" onclick="closePaySlipModal()">✕</button>
+                </div>
+            </header>
+            
+            <div class="payslip-container" id="payslip-print-area">
+                <div class="payslip-header">
+                    <div class="payslip-corp-details">
+                        <h1 id="slip-company-name">NEXUS CORPORATION</h1>
+                        <p>Corporate Office Address, Payroll Division</p>
+                    </div>
+                    <div class="payslip-title">
+                        <h2>PAYSLIP</h2>
+                        <span id="slip-period">June 2026</span>
+                    </div>
+                </div>
+
+                <div class="payslip-details-grid">
+                    <div>
+                        <p><strong>Employee ID:</strong> <span id="slip-emp-code">EMP101</span></p>
+                        <p><strong>Employee Name:</strong> <span id="slip-emp-name">John Doe</span></p>
+                        <p><strong>Department:</strong> <span id="slip-emp-dept">IT</span></p>
+                    </div>
+                    <div>
+                        <p><strong>Designation:</strong> <span id="slip-emp-desig">Senior Software Engineer</span></p>
+                        <p><strong>Working Days:</strong> <span id="slip-working-days">26</span></p>
+                        <p><strong>Unpaid Leaves:</strong> <span id="slip-leaves">0</span></p>
+                    </div>
+                </div>
+
+                <table class="payslip-table">
+                    <thead>
+                        <tr>
+                            <th>Earnings</th>
+                            <th class="text-right">Amount (₹)</th>
+                            <th>Deductions</th>
+                            <th class="text-right">Amount (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic Salary</td>
+                            <td class="text-right" id="slip-basic">60,000.00</td>
+                            <td>Provident Fund (PF)</td>
+                            <td class="text-right" id="slip-pf">7,200.00</td>
+                        </tr>
+                        <tr>
+                            <td>House Rent Allowance (HRA)</td>
+                            <td class="text-right" id="slip-hra">24,000.00</td>
+                            <td>Professional Tax (PT)</td>
+                            <td class="text-right" id="slip-pt">200.00</td>
+                        </tr>
+                        <tr>
+                            <td>Dearness Allowance (DA)</td>
+                            <td class="text-right" id="slip-da">6,000.00</td>
+                            <td>TDS (Income Tax)</td>
+                            <td class="text-right" id="slip-tax">4,719.00</td>
+                        </tr>
+                        <tr>
+                            <td>Medical Allowance</td>
+                            <td class="text-right" id="slip-medical">1,250.00</td>
+                            <td>Health & Life Insurance</td>
+                            <td class="text-right" id="slip-insurance">1,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Travel Allowance</td>
+                            <td class="text-right" id="slip-travel">1,600.00</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Performance Bonus</td>
+                            <td class="text-right" id="slip-bonus">5,000.00</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="payslip-subtotal-row">
+                            <td><strong>Total Gross Earnings</strong></td>
+                            <td class="text-right"><strong id="slip-gross">97,850.00</strong></td>
+                            <td><strong>Total Deductions</strong></td>
+                            <td class="text-right"><strong id="slip-deductions">13,119.00</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="payslip-summary-footer">
+                    <div class="net-salary-badge">
+                        <span>NET PAYABLE SALARY</span>
+                        <h2 id="slip-net-payable">₹84,731.00</h2>
+                    </div>
+                    <div class="net-salary-words">
+                        <p><strong>Net Salary in Words:</strong> <em id="slip-net-words">Rupees Eighty-Four Thousand Seven Hundred Thirty-One Only</em></p>
+                    </div>
+                </div>
+
+                <div class="payslip-signatures">
+                    <div class="signature-box">
+                        <div class="signature-line"></div>
+                        <p>Employer Signature</p>
+                    </div>
+                    <div class="signature-box">
+                        <div class="signature-line"></div>
+                        <p>Employee Signature</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Phone Verification Modal -->
+    <div id="modal-phone-verification" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-450">
+            <header class="modal-header">
+                <h2>Secure Phone Verification</h2>
+                <button class="btn-close" onclick="closePhoneVerificationModal()">✕</button>
+            </header>
+            <form id="phone-verification-form">
+                <div class="form-group">
+                    <label for="phone-verify-num">Corporate Contact Number</label>
+                    <input type="tel" id="phone-verify-num" placeholder="e.g. 9876543210" required>
+                </div>
+                <div class="form-group hide" id="phone-otp-group">
+                    <label for="phone-verify-code">6-Digit Verification Code</label>
+                    <input type="text" id="phone-verify-code" placeholder="••••••" maxlength="6" pattern="\d{6}">
+                    <div class="sms-simulation-box mt-2">
+                        <span class="icon-pulse">💬</span>
+                        <span><strong>Simulated SMS:</strong> Your verification code is <strong id="simulated-phone-otp" class="otp-highlight">123456</strong></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closePhoneVerificationModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-phone-verify-action">Send Verification SMS</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 6. HR Add Candidate Modal -->
+    <div id="modal-candidate" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-450">
+            <header class="modal-header">
+                <h2>Add Recruitment Candidate</h2>
+                <button class="btn-close" onclick="closeCandidateModal()">✕</button>
+            </header>
+            <form id="candidate-form">
+                <div class="form-group">
+                    <label for="cand-name">Full Name</label>
+                    <input type="text" id="cand-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cand-email">Email Address</label>
+                    <input type="email" id="cand-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cand-phone">Phone Number</label>
+                    <input type="text" id="cand-phone">
+                </div>
+                <div class="form-group">
+                    <label for="cand-desig">Designation</label>
+                    <input type="text" id="cand-desig" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeCandidateModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Candidate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 7. Candidate Update Status Modal -->
+    <div id="modal-candidate-status" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-450">
+            <header class="modal-header">
+                <h2>Update Candidate Status</h2>
+                <button class="btn-close" onclick="closeCandidateStatusModal()">✕</button>
+            </header>
+            <form id="candidate-status-form">
+                <input type="hidden" id="cand-status-id">
+                <div class="form-group">
+                    <label for="cand-status-select">Status</label>
+                    <select id="cand-status-select">
+                        <option value="Applied">Applied</option>
+                        <option value="Interviewing">Interviewing</option>
+                        <option value="Offer Letter">Offer Letter</option>
+                        <option value="Joined">Joined</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cand-interview-date">Interview Date</label>
+                    <input type="date" id="cand-interview-date">
+                </div>
+                <div class="form-group">
+                    <label for="cand-feedback">Feedback / Remarks</label>
+                    <textarea id="cand-feedback" rows="3"></textarea>
+                </div>
+                <div class="form-group checkbox-group" id="cand-offer-letter-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="cand-offer-sent"> Offer Letter Sent
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeCandidateStatusModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 8. Assign Asset Modal -->
+    <div id="modal-assign-asset" class="modal-overlay hide">
+        <div class="modal-card glass-panel max-width-450">
+            <header class="modal-header">
+                <h2>Assign Company Asset</h2>
+                <button class="btn-close" onclick="closeAssignAssetModal()">✕</button>
+            </header>
+            <form id="assign-asset-form">
+                <input type="hidden" id="assign-asset-product-id">
+                <div class="form-group">
+                    <label for="assign-asset-employee-select">Assign to Employee</label>
+                    <select id="assign-asset-employee-select" required>
+                        <option value="" disabled selected>Select Employee</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeAssignAssetModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Assign Asset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== LOGOUT TRANSITION OVERLAY ==================== -->
+    <div id="logout-overlay" class="logout-overlay hide">
+        <div class="logout-card glass-panel text-center">
+            <div class="logout-icon-anim">🔒</div>
+            <h2>Signing Out</h2>
+            <p>Safely terminating secure corporate payroll session...</p>
+            <div class="logout-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Load CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    
+    <!-- Main JS Application -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -4,6 +4,8 @@
   "description": "EnterpriseOS Core Suite",
   "main": "app.py",
   "scripts": {
+    "start": "python app.py",
+    "dev": "python app.py",
     "build": "python build.py"
   },
   "dependencies": {}

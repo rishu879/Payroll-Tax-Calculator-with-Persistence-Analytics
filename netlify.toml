@@ -1,0 +1,6 @@
+# Static deploy of the PayPilot frontend.
+# Only the public assets are copied into dist so server files, the SQLite
+# database, backups and logs in the repo root are never published.
+[build]
+  command = "rm -rf dist && mkdir -p dist && cp index.html style.css dist/"
+  publish = "dist"

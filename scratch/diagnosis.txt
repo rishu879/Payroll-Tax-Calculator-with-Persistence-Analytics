@@ -1,0 +1,31 @@
+Menu Item                 | Tab ID               | Has Click Handler  | Pane Exists  | Pane Content Len | Render/Action Funcs
+------------------------------------------------------------------------------------------------------------------------
+💼 CA Buddy AI CA          | ca-buddy             | True               | True         | 42076            | openCaBuddy
+🛡️ Security &amp; OAuth OWASP A+ | security-audit       | True               | True         | 8347             | loadSecurityAuditReport, renderAuditRows
+📊 Dashboard               | dashboard            | True               | True         | 7607             | 
+🏪 Shop Mode               | shop-mode            | True               | True         | 1586             | toggleCalmMode, setInterfaceMode, renderShopTables
+👥 Employees               | employees            | True               | True         | 1243             | 
+💸 Payroll Runs            | payroll              | True               | True         | 924              | 
+🧮 Tax Calculator          | tax-calc             | True               | True         | 1964             | calculatePaneTax, caRecalculateGst, runFfCalc
+🎬 Salary Journey          | salary-journey       | True               | True         | 3889             | 
+🕵️ Tax Detective          | tax-detective        | True               | True         | 2306             | 
+🪙 Where Did ₹ Go?         | coin-vault           | True               | True         | 1502             | 
+📷 QR Scanner              | qr-scanner           | True               | True         | 4191             | 
+🎯 Salary Buddy            | salary-buddy         | True               | True         | 2124             | openCaBuddy
+📈 Raise Slider            | what-if-raise        | True               | True         | 2062             | copyPayslipWhatsApp, updateRaiseSlider
+🎯 CTC Goal Solver         | goal-solver          | True               | True         | 1075             | solveCtcGoal
+⚖️ Offer Compare          | offer-compare        | True               | True         | 1844             | runOfferCompare
+🎞️ Slip Timeline          | payslip-timeline     | True               | False        | 0                | checkPayslipAccuracy, copyPayslipWhatsApp, openPayslipModal
+📋 Tax Checklist           | tax-checklist        | True               | False        | 0                | 
+🏠 HRA Rent Calc           | hra-calc             | True               | True         | 2321             | calculatePaneTax, caRecalculateGst, runFfCalc
+⏱️ Overtime Calc          | overtime-calc        | True               | True         | 1618             | calculatePaneTax, caRecalculateGst, runFfCalc
+🎉 Festival Bonus          | festival-bonus       | True               | True         | 1560             | runBonusCalc
+📅 Cash Calendar           | cashflow-cal         | True               | False        | 0                | caRenderPnlAndCashFlow
+📑 F&amp;F Settlement      | ff-settlement        | True               | True         | 1949             | 
+✅ Onboard Check           | onboarding-check     | True               | True         | 1718             | checkPayslipAccuracy
+🩺 Health Score            | health-score         | True               | True         | 1192             | 
+🔮 3-Month Forecast        | forecast-3m          | True               | True         | 1693             | 
+🌱 Life Events             | life-events          | True               | True         | 1589             | 
+🤖 AI Assistant            | assistant            | True               | True         | 1255             | 
+🔗 Audit Log               | audit-trail          | True               | True         | 770              | loadSecurityAuditReport, renderAuditRows
+⚙️ Settings               | settings             | True               | True         | 1906             | 

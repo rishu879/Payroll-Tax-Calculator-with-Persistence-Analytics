@@ -1,0 +1,30 @@
+<div id="pane-onboarding-check" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>NEW EMPLOYEE ONBOARDING CHECKLIST</h2>
+          <p style="color: var(--cinema-muted);">Tick off verification milestones before issuing the first salary run.</p>
+        </div>
+
+        <div class="card" style="max-width: 600px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;" id="onboard-checklist-items">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="checkbox" checked onchange="updateOnboardBadge()"> <span>Aadhaar &amp; PAN Card Verified</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="checkbox" checked onchange="updateOnboardBadge()"> <span>Bank Account &amp; Cancelled Cheque Received</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="checkbox" checked onchange="updateOnboardBadge()"> <span>EPF Form 11 &amp; UAN Number Assigned</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="checkbox" checked onchange="updateOnboardBadge()"> <span>Tax Regime Option Form 12BB Submitted</span>
+            </label>
+          </div>
+          <div id="onboard-status-badge" style="margin-top: 20px; padding: 12px; background: rgba(16,185,129,0.15); border: 1px solid var(--cinema-emerald); border-radius: 4px; color: var(--cinema-emerald); font-weight: 700; text-align: center;">
+            ✓ READY TO PAY: All statutory compliance checks completed!
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: PAYROLL HEALTH SCORE
+           ======================================================================= -->

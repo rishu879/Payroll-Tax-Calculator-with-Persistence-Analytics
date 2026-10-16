@@ -1,0 +1,36 @@
+<div id="pane-overtime-calc" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>OVERTIME &amp; SHIFT CALCULATOR</h2>
+          <p style="color: var(--cinema-muted);">Calculate overtime payouts at statutory 1.5x or 2.0x rates.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="form-group">
+              <label class="form-label">Hourly Base Rate (₹/hr)</label>
+              <input type="number" class="form-control font-mono" id="ot-rate" value="350" oninput="runOtCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Overtime Hours Logged</label>
+              <input type="number" class="form-control font-mono" id="ot-hours" value="18" oninput="runOtCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Multiplier</label>
+              <select class="form-control" id="ot-multiplier" onchange="runOtCalc()">
+                <option value="1.5">1.5x (Standard Overtime)</option>
+                <option value="2.0">2.0x (Holiday / Night Shift Double Rate)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card card-glow-gold">
+            <h4 style="color: var(--cinema-gold); margin-bottom: 12px;">Total Overtime Payout</h4>
+            <div class="font-mono money-val" style="font-size: 32px; font-weight: 700; color: var(--cinema-gold);" id="ot-total-payout">₹9,450</div>
+            <p style="font-size: 13px; color: var(--cinema-muted); margin-top: 8px;">Directly attachable to the employee's next payslip.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: FESTIVAL BONUS PLANNER
+           ======================================================================= -->

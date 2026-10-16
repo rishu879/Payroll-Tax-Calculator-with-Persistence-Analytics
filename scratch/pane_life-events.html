@@ -1,0 +1,33 @@
+<div id="pane-life-events" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>LIFE EVENTS SIMULATOR</h2>
+          <p style="color: var(--cinema-muted);">Tap a life milestone to instantly see its impact on taxes and cash flow.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 24px;">
+          <div class="card" style="cursor: pointer;" onclick="simulateLifeEvent('raise')">
+            <div style="font-size: 32px; margin-bottom: 8px;">🚀</div>
+            <h4>Got a 20% Raise</h4>
+            <p style="font-size: 12px; color: var(--cinema-muted);">+₹20,000/mo gross</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="simulateLifeEvent('house')">
+            <div style="font-size: 32px; margin-bottom: 8px;">🏡</div>
+            <h4>Bought a House</h4>
+            <p style="font-size: 12px; color: var(--cinema-muted);">Sec 24(b) ₹2,00,000 interest deduction</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="simulateLifeEvent('marriage')">
+            <div style="font-size: 32px; margin-bottom: 8px;">💍</div>
+            <h4>Got Married</h4>
+            <p style="font-size: 12px; color: var(--cinema-muted);">Joint budget &amp; dual health insurance (80D)</p>
+          </div>
+        </div>
+
+        <div id="life-event-outcome" class="card card-glow-teal" style="display: none;">
+          <h4 style="color: var(--cinema-teal); margin-bottom: 6px;" id="life-outcome-title">Outcome Analysis</h4>
+          <p style="font-size: 13px; color: var(--cinema-cream);" id="life-outcome-desc">Select an event above.</p>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: AI ASSISTANT WITH VOICE INPUT
+           ======================================================================= -->

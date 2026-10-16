@@ -1,0 +1,40 @@
+<div id="pane-offer-compare" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>JOB OFFER COMPARER</h2>
+          <p style="color: var(--cinema-muted);">Compare two job offers side-by-side with real annual in-hand take-home.</p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 20px;">
+          <div class="card">
+            <h4 style="color: var(--cinema-orange); margin-bottom: 12px;">Offer A (Current / Company 1)</h4>
+            <div class="form-group">
+              <label class="form-label">Annual CTC (₹)</label>
+              <input type="number" class="form-control font-mono" id="offerA-ctc" value="1200000" oninput="runOfferCompare()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Variable / Joining Bonus (₹)</label>
+              <input type="number" class="form-control font-mono" id="offerA-bonus" value="50000" oninput="runOfferCompare()">
+            </div>
+          </div>
+
+          <div class="card">
+            <h4 style="color: var(--cinema-teal); margin-bottom: 12px;">Offer B (New Opportunity)</h4>
+            <div class="form-group">
+              <label class="form-label">Annual CTC (₹)</label>
+              <input type="number" class="form-control font-mono" id="offerB-ctc" value="1600000" oninput="runOfferCompare()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Variable / Joining Bonus (₹)</label>
+              <input type="number" class="form-control font-mono" id="offerB-bonus" value="100000" oninput="runOfferCompare()">
+            </div>
+          </div>
+        </div>
+
+        <div id="offer-compare-winner" class="card" style="border: 1px solid var(--cinema-teal); text-align: center;">
+          <h3 style="color: var(--cinema-teal);">🎯 Offer B provides ₹26,500 MORE in-hand per month!</h3>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: HRA RENT CALCULATOR
+           ======================================================================= -->

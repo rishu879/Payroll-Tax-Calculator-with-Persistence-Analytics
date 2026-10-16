@@ -1,0 +1,45 @@
+============================================================
+PANE: pane-salary-buddy
+<div id="pane-salary-buddy" 
+============================================================
+PANE: pane-what-if-raise
+<div id="pane-what-if-raise" 
+============================================================
+PANE: pane-goal-solver
+<div id="pane-goal-solver" 
+============================================================
+PANE: pane-offer-compare
+<div id="pane-offer-compare" 
+============================================================
+PANE: pane-payslip-timeline
+MISSING FROM HTML!
+============================================================
+PANE: pane-tax-checklist
+MISSING FROM HTML!
+============================================================
+PANE: pane-hra-calc
+<div id="pane-hra-calc" 
+============================================================
+PANE: pane-overtime-calc
+<div id="pane-overtime-calc" 
+============================================================
+PANE: pane-festival-bonus
+<div id="pane-festival-bonus" 
+============================================================
+PANE: pane-cashflow-cal
+MISSING FROM HTML!
+============================================================
+PANE: pane-ff-settlement
+<div id="pane-ff-settlement" 
+============================================================
+PANE: pane-onboarding-check
+<div id="pane-onboarding-check" 
+============================================================
+PANE: pane-health-score
+<div id="pane-health-score" 
+============================================================
+PANE: pane-forecast-3m
+<div id="pane-forecast-3m" 
+============================================================
+PANE: pane-life-events
+<div id="pane-life-events" 

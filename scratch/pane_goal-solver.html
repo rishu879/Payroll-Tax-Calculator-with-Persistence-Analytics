@@ -1,0 +1,24 @@
+<div id="pane-goal-solver" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>TAKE-HOME GOAL SOLVER</h2>
+          <p style="color: var(--cinema-muted);">Type the monthly in-hand salary you desire, and we work backwards to your target CTC.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="form-group">
+              <label class="form-label">Desired Monthly In-Hand Salary (₹)</label>
+              <input type="number" class="form-control font-mono" id="goal-desired-inhand" value="100000" oninput="solveCtcGoal()">
+            </div>
+          </div>
+          <div class="card card-glow-teal">
+            <h4 style="color: var(--cinema-teal); margin-bottom: 8px;">Target CTC To Ask In Interview:</h4>
+            <div class="font-mono money-val" style="font-size: 32px; font-weight: 700; color: var(--cinema-gold);" id="goal-target-ctc">₹14,50,000</div>
+            <p style="font-size: 12px; color: var(--cinema-muted); margin-top: 6px;">Includes standard ₹75,000 deduction, 12% basic PF, and New Regime slabs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: JOB OFFER COMPARE
+           ======================================================================= -->

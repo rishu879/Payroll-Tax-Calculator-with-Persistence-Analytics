@@ -1,0 +1,32 @@
+<div id="pane-forecast-3m" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>NEXT 3-MONTHS PAYROLL FORECAST</h2>
+          <p style="color: var(--cinema-muted);">Simulate hiring another team member to visualize budget impacts.</p>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap;">
+            <h4>Projected Expenditure</h4>
+            <button class="btn btn-teal" onclick="simulateNewHire()">+ Simulate Hiring 1 Senior Engineer (₹1.5L/mo)</button>
+          </div>
+
+          <div class="grid-3" style="text-align: center;">
+            <div style="background: var(--bg-card-subtle); padding: 16px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">APRIL 2026</span>
+              <div class="font-mono money-val" style="font-size: 24px; color: var(--cinema-orange);" id="fc-apr">₹5,90,000</div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 16px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">MAY 2026</span>
+              <div class="font-mono money-val" style="font-size: 24px; color: var(--cinema-orange);" id="fc-may">₹5,90,000</div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 16px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">JUNE 2026</span>
+              <div class="font-mono money-val" style="font-size: 24px; color: var(--cinema-orange);" id="fc-jun">₹5,90,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: LIFE EVENTS SIMULATOR
+           ======================================================================= -->

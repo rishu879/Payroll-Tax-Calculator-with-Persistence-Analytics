@@ -1,0 +1,34 @@
+<div id="pane-what-if-raise" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>SALARY SLIDER // "WHAT IF I GET A RAISE?"</h2>
+          <p style="color: var(--cinema-muted);">See how much extra cash reaches your bank account per ₹100 of increment.</p>
+        </div>
+
+        <div class="card card-glow-orange">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <label class="form-label">Hypothetical Raise Percentage</label>
+            <span class="font-mono" style="font-size: 28px; font-weight: 700; color: var(--cinema-orange);" id="raise-pct-display">15%</span>
+          </div>
+
+          <input type="range" min="0" max="50" step="1" value="15" style="width: 100%; height: 8px; margin: 20px 0; accent-color: var(--cinema-orange); cursor: pointer;" oninput="updateRaiseSlider(this.value)">
+
+          <div class="grid-3" style="text-align: center;">
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">NEW MONTHLY TAKE-HOME</span>
+              <div class="font-mono money-val" style="font-size: 22px; color: var(--cinema-teal); font-weight: 700;" id="raise-new-takehome">₹1,75,400</div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">EXTRA TAX PER MONTH</span>
+              <div class="font-mono money-val" style="font-size: 22px; color: var(--cinema-crimson); font-weight: 700;" id="raise-extra-tax">₹4,200</div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm);">
+              <span style="font-size: 11px; color: var(--cinema-muted);">REAL RUPEES IN POCKET</span>
+              <div class="font-mono" style="font-size: 22px; color: var(--cinema-gold); font-weight: 700;" id="raise-pocket-rate">₹78 per ₹100</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: TAKE-HOME GOAL SOLVER (REVERSE CTC)
+           ======================================================================= -->

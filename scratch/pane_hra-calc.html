@@ -1,0 +1,45 @@
+<div id="pane-hra-calc" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>HRA RENT CALCULATOR</h2>
+          <p style="color: var(--cinema-muted);">Find your exact tax exemption under Section 10(13A).</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="form-group">
+              <label class="form-label">City Type</label>
+              <select class="form-control" id="hra-city" onchange="runHraCalc()">
+                <option value="metro">Metro (Delhi, Mumbai, Kolkata, Chennai - 50%)</option>
+                <option value="non-metro">Non-Metro (Bangalore, Hyderabad, Pune, etc - 40%)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Monthly Basic Salary (₹)</label>
+              <input type="number" class="form-control font-mono" id="hra-basic" value="50000" oninput="runHraCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Monthly HRA Received (₹)</label>
+              <input type="number" class="form-control font-mono" id="hra-received" value="25000" oninput="runHraCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Actual Rent Paid Per Month (₹)</label>
+              <input type="number" class="form-control font-mono" id="hra-rent" value="22000" oninput="runHraCalc()">
+            </div>
+          </div>
+
+          <div class="card card-glow-teal">
+            <h4 style="color: var(--cinema-teal); margin-bottom: 12px;">HRA Exemption Result</h4>
+            <div style="font-size: 14px; line-height: 1.8;">
+              Exempt HRA (Annual): <strong class="font-mono money-val" style="color: var(--cinema-emerald); font-size: 22px;" id="hra-exempt-val">₹2,04,000</strong><br>
+              Taxable HRA (Annual): <strong class="font-mono money-val" style="color: var(--cinema-crimson);" id="hra-taxable-val">₹96,000</strong>
+            </div>
+            <div style="margin-top: 16px; padding: 10px; background: rgba(255,255,255,0.04); border-radius: 4px; font-size: 12px; color: var(--cinema-gold);" id="hra-pan-alert">
+              ⚠️ Note: Annual rent is ₹2,64,000 (> ₹1,00,000). Landlord's PAN is mandatory to claim this deduction!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: OVERTIME & SHIFT CALCULATOR
+           ======================================================================= -->

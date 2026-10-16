@@ -1,0 +1,39 @@
+<div id="pane-ff-settlement" class="view-pane">
+        <div style="margin-bottom: 20px;">
+          <h2>FULL &amp; FINAL (F&amp;F) SETTLEMENT</h2>
+          <p style="color: var(--cinema-muted);">Statutory separation math: Gratuity ($15 \times B \times Y / 26$), Leave Encashment ($B/26$), &amp; Notice Recovery ($G/30$).</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="form-group">
+              <label class="form-label">Monthly Basic Salary (₹)</label>
+              <input type="number" class="form-control font-mono" id="ff-basic" value="60000" oninput="runFfCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Completed Years of Service</label>
+              <input type="number" class="form-control font-mono" id="ff-tenure" value="6" oninput="runFfCalc()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Unused Earned Leave Balance (Days)</label>
+              <input type="number" class="form-control font-mono" id="ff-leave-days" value="18" oninput="runFfCalc()">
+            </div>
+          </div>
+
+          <div class="card card-glow-teal">
+            <h4 style="color: var(--cinema-teal); margin-bottom: 12px;">Settlement Statement</h4>
+            <div style="font-size: 14px; line-height: 1.8;">
+              Gratuity Payout: <strong class="font-mono money-val" id="ff-gratuity">₹2,07,692</strong><br>
+              Leave Encashment: <strong class="font-mono money-val" id="ff-leave-val">₹41,538</strong><br>
+              <div style="border-top: 1px solid var(--border-subtle); margin-top: 8px; padding-top: 8px;">
+                <span style="font-weight: 700; color: var(--cinema-teal);">Total Net Payable:</span>
+                <strong class="font-mono money-val" style="color: var(--cinema-teal); font-size: 22px;" id="ff-net-total">₹2,49,230</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =======================================================================
+           VIEW: ONBOARDING CHECKLIST
+           ======================================================================= -->
